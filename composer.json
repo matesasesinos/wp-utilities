@@ -2,13 +2,13 @@
   "name": "mt/wputils",
   "description": "Utils for WordPress plugins and themes developemnet",
   "type": "library",
-  "require": {
-    "php": ">=7.4"
-  },
   "autoload": {
     "psr-4": {
       "Mt\\Wputils\\": "src/"
     }
+  },
+  "require": {
+    "php": ">=7.4"
   },
   "authors": [
     {

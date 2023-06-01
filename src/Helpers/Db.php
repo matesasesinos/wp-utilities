@@ -198,7 +198,7 @@ class Db
         $this->mysqlManager($sql);
     }
 
-    public function deleteTable(array $tables)
+    public function deleteTables(array $tables)
     {
         $prefix = $this->prefix;
         $names = implode(', ', array_map(function ($tableName) use ($prefix) {
@@ -217,5 +217,10 @@ class Db
     public function addIndex(string $table, string $index, string $column)
     {
         return $this->query("ALTER TABLE `{$this->prefix}{$table}` ADD INDEX `{$index}` (`{$column}`);");
+    }
+
+    public function queryError() 
+    {
+        return $this->wpdb->last_error;
     }
 }
